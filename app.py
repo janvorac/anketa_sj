@@ -18,4 +18,7 @@ def get_data() -> pd.DataFrame:
 
     data[data == ''] = numpy.nan
 
+    data.set_index(keys=['id'], inplace=True)
+
     return data.dropna(how='all', axis='index').dropna(how='all', axis='columns')
+
