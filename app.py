@@ -3,6 +3,11 @@ from bs4 import BeautifulSoup
 import requests
 import pandas
 import numpy
+import pathlib
+import plotly.express as px
+
+
+PLOT_PATH = pathlib.Path('plots')
 
 
 def get_data() -> pd.DataFrame:
@@ -22,3 +27,21 @@ def get_data() -> pd.DataFrame:
 
     return data.dropna(how='all', axis='index').dropna(how='all', axis='columns')
 
+
+def tummy_full_histogram(data: pd.DataFrame):
+    data = get_data()
+
+    fig = px.histogram(data, x='jak_se_naji', category_orders=dict(jak_se_naji=[1, 2, 3, 4, 5]))
+    fig.update_yaxes(title='počet')
+    fig.update_xaxes(title='Jak dobře se v jídelně najíte (známky jako ve škole)')
+    return fig
+
+
+def main():
+    data = get_data()
+    tummy_full = tummy_full_histogram(data)
+    tummy_full.write_html(PLOT_PATH / 'tummy_full.html')
+
+
+if __name__ == "__main__":
+    main()
