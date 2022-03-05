@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 iframe {
     width: 600px;
     height: 400px;
@@ -5,30 +7,33 @@ iframe {
 }
 
 blockquote {
-    padding: 60px 80px 40px;
+    /*padding: 60px 80px 40px;*/
     position: relative;
-    font-family: "Utopia-italic";
+    font-family: 'Nunito', sans-serif;
     font-size: 35px;
     font-weight: 700;
-    text-align: center;
+    width: 800px;
+    margin: 20px 50px;
 }
 
 blockquote::before {
-    content: "\f095";
-    font-family: FontAwesome;
-    display: inline-block;
-    padding-right: 6px;
-    vertical-align: middle;
-    font-size: 180px;
- }
+    content: "“";
+    position: absolute;
+    left: -0.5em;
+}
 
 blockquote::after {
-    content: "";
-    top: 20px;
-    left: 50%;
-    margin-left: -100px;
-    position: absolute;
-    border-bottom: 3px solid #bf0024;
-    height: 3px;
-    width: 200px;
+    content: "”";
+    margin-right: -0.9rem;
 }
+
+hr{
+    color: #ccc;
+    background-color: #ccc;
+    width: 200px;
+    height: 2px;
+    border-width: 0;
+    text-align: left;
+    margin-left: 80px;
+}
+
