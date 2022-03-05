@@ -34,6 +34,7 @@ def create_tummy_full_histogram(data: pd.DataFrame):
     fig.update_xaxes(title='Jak dobře se v jídelně najíte (známky jako ve škole)')
     return fig
 
+
 def create_how_often_you_return_hist(data):
     data_sub = data.copy()
     data_sub['jak_casto_vraci'] = data_sub['jak_casto_vraci'].replace('1', 'téměř pokaždé')
@@ -50,6 +51,7 @@ def create_how_often_you_return_hist(data):
     fig.update_xaxes(title='Jak často vracíte víc než polovinu jídla (z pěti obědů)')
     return fig
 
+
 def create_quality_score_histogram(data):
     fig = px.histogram(
         data, x='kvalita', category_orders=dict(kvalita=[1, 2, 3, 4, 5])
@@ -57,6 +59,7 @@ def create_quality_score_histogram(data):
     fig.update_yaxes(title='počet')
     fig.update_xaxes(title='Jak jste spokojeni s kvalitou a chutí jídla v ŠJ (známky jako ve škole)')
     return fig
+
 
 def main():
     data = get_data()
