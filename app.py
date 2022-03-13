@@ -67,6 +67,10 @@ def create_quality_score_histogram(data):
     return fig
 
 
+def open_questions(data):
+    counts = get_counts(data['zkusenost'])
+
+
 def main():
     data = get_data()
     tummy_full = create_tummy_full_histogram(data)
