@@ -1,15 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
 iframe {
     width: 600px;
     height: 400px;
     border: 0;
 }
 
+a {
+    color: #0d2a63;
+}
+
+#experience-frame{
+    height: 2000px;
+    width: 800px;
+}
+
 blockquote {
     /*padding: 60px 80px 40px;*/
     position: relative;
-    font-family: 'Nunito', sans-serif;
     font-size: 35px;
     font-weight: 700;
     width: 800px;
